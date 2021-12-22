@@ -40,7 +40,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('ListTableSakila').output.value",
+						"value": "@activity('Lookup1Carloca').output",
 						"type": "Expression"
 					},
 					"activities": [
@@ -58,15 +58,20 @@
 							"userProperties": [],
 							"typeProperties": {
 								"source": {
-									"type": "AzureMySqlSource",
-									"queryTimeout": "02:00:00"
+									"type": "MySqlSource"
 								},
 								"enableStaging": false
 							},
 							"inputs": [
 								{
-									"referenceName": "AzureMySqlTable1Carloca",
-									"type": "DatasetReference"
+									"referenceName": "MySqlTable1Carloca",
+									"type": "DatasetReference",
+									"parameters": {
+										"tableName": {
+											"value": "@item().tablename",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
