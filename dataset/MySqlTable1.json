@@ -12,6 +12,12 @@
 		},
 		"annotations": [],
 		"type": "MySqlTable",
-		"schema": []
+		"schema": [],
+		"typeProperties": {
+			"tableName": {
+				"value": "@dataset().tableName",
+				"type": "Expression"
+			}
+		}
 	}
 }

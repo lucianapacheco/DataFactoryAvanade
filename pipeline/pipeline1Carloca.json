@@ -40,7 +40,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Lookup1Carloca').output",
+						"value": "@activity('Lookup1Carloca').output.value",
 						"type": "Expression"
 					},
 					"activities": [
@@ -64,11 +64,11 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "MySqlTable1Carloca",
+									"referenceName": "MySqlTable1",
 									"type": "DatasetReference",
 									"parameters": {
 										"tableName": {
-											"value": "@item().tablename",
+											"value": "@item().table_name",
 											"type": "Expression"
 										}
 									}
